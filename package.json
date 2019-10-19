@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-plugin-merge-pages",
+  "version": "1.0.0",
+  "description": "VuePress Plugin: Merge Markdown files in a single Markdown",
+  "main": "src/index.js",
+  "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "cross-path-sort": "^1.0.0",
+    "vuepress": "^1.2.0"
+  }
+}
