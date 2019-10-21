@@ -1,7 +1,9 @@
 const crossPathSort = require('cross-path-sort')
 
 const extractPages = context => {
-  const pages = context.pages.map(page => {
+  const { pages: original = [] } = context
+
+  const pages = original.map(page => {
     return {
       content: page._content,
       path: page.path

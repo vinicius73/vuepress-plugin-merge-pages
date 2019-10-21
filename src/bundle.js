@@ -1,50 +1,42 @@
-const { slugify, chalk } = require('@vuepress/shared-utils')
-const path = require('path')
+const { slugify, ensureLeadingSlash } = require('@vuepress/shared-utils')
 const applyFilter = require('./apply-filter')
 const extractPages = require('./extract-pages')
-const logger = require('./logger')
-const { green } = chalk
+const { generateFile } = require('./file')
+const { InvalidBundleException } = require('./extract-pages')
 
-const { PLUGIN_NAME } = require('./constants')
-
-const mergePage = (current, { content }) => {
-  return current.length === 0
-    ? content
-    : `${current}\n\n${content}\n\n<hr class="page-break" />`
+const assertBundle = bundle => {
+  if (!bundle.name && !bundle.path) {
+    throw new InvalidBundleException('Bundle need path or name option')
+  }
 }
 
-const generateFile = async (context, pages, bundle) => {
-  const { name } = bundle
+const parsePathAndName = bundle => {
+  assertBundle(bundle) // ! exception
 
-  logger.wait('Generating:', green(`${bundle.path} => ${name}.md`))
-  logger.debug(bundle)
+  const name = bundle.name || slugify(bundle.path)
+  const path = ensureLeadingSlash(bundle.path || slugify(bundle.name))
 
-  const content = pages.reduce(mergePage, '')
-
-  const filePath = `${PLUGIN_NAME}/${name}.md`
-
-  await context.writeTemp(filePath, content)
-
-  return path.join(context.tempPath, filePath)
+  return { name, path }
 }
 
 const extractBundleData = (pages, bundle) => {
-  const name = bundle.name || slugify(bundle.path)
+  const { name, path } = parsePathAndName(bundle)
   const filtered = applyFilter(pages, bundle.filter)
 
   return {
     ...bundle,
     pages: filtered,
+    path,
     name
   }
 }
 
-const generateBundle = async (context, pages, bundleRaw) => {
+const generatePageData = async (context, pages, bundleRaw) => {
   const bundle = extractBundleData(pages, bundleRaw)
   const filePath = await generateFile(context, pages, bundle)
 
   return {
-    ...bundle,
+    path: bundle.path,
     filePath
   }
 }
@@ -52,8 +44,8 @@ const generateBundle = async (context, pages, bundleRaw) => {
 const processBundles = (context, bundles) => {
   const pages = extractPages(context)
   return Promise.all(
-    bundles.map(bundle => generateBundle(context, pages, bundle))
+    bundles.map(bundle => generatePageData(context, pages, bundle))
   )
 }
 
-module.exports = { processBundles }
+module.exports = { processBundles, generatePageData, extractBundleData }

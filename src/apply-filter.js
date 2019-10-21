@@ -1,4 +1,4 @@
-const applyFilter = (pages, filter) => {
+const applyFilter = (pages = [], filter) => {
   return filter
     ? filter(pages)
     : pages
