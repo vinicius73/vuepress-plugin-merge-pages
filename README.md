@@ -27,7 +27,9 @@ module.exports = {
         bundles: [{
           path: '/printable',
           name: 'print-all-content-page', // optional
-          filter: ({ path }) => path.includes('/printable-page/') // optional
+          filter: (pages) => { // optional
+            return pages.filter(({ path }) => path.includes('/printable-page/'))
+          }
         }]
       }
     ]
@@ -62,9 +64,10 @@ Name of generated file.
 - Type: `Function => Boolean`
 - Required: `false`
 
-Filter pages of bundle. Receive `page` and return `boolean`
+Filter pages of bundle. Receive `pages` and return new list of pages
 
 ```js
+// page object
 {
   content: String,
   path: String,
