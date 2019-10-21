@@ -1,0 +1,4 @@
+src/__mocks__
+tests/
+.github
+.circleci
