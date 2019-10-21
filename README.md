@@ -6,8 +6,9 @@
 ![NPM](https://flat.badgen.net/npm/dm/vuepress-plugin-merge-pages?icon=npm)
 ![Codeclimate](https://flat.badgen.net/codeclimate/maintainability/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
 ![Codeclimate](https://flat.badgen.net/codeclimate/coverage/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
-![Codeclimate](https://flat.badgen.net/codeclimate/coverage/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
+![Codeclimate](https://flat.badgen.net/lgtm/grade/g/vinicius73/vuepress-plugin-merge-pages?icon=lgtm)
 ![Codeclimate](https://flat.badgen.net/github/status/vinicius73/vuepress-plugin-merge-pages?icon=github)
+
 
 ## Install
 
