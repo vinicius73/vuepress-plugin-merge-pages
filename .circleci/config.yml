@@ -30,7 +30,7 @@ jobs: # a collection of steps
           command: 'yarn test --ci --runInBand --reporters=default --reporters=jest-junit --coverage'
           environment:
             JEST_JUNIT_OUTPUT_DIR: "reports/junit/js-test-results.xml"
-      - run: ./cc-test-reporter after-build -t clover --exit-code $?
+      - run: ./cc-test-reporter after-build -t coverage/clover --exit-code $?
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: coverage
           prefix: coverage
