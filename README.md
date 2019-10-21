@@ -2,6 +2,13 @@
 
 > VuePress Plugin: Merge Markdown files in a single Markdown
 
+![NPM](https://flat.badgen.net/npm/v/vuepress-plugin-merge-pages?icon=npm)
+![NPM](https://flat.badgen.net/npm/dm/vuepress-plugin-merge-pages?icon=npm)
+![Codeclimate](https://flat.badgen.net/codeclimate/maintainability/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
+![Codeclimate](https://flat.badgen.net/codeclimate/coverage/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
+![Codeclimate](https://flat.badgen.net/codeclimate/coverage/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
+![Codeclimate](https://flat.badgen.net/github/status/vinicius73/vuepress-plugin-merge-pages?icon=github)
+
 ## Install
 
 ```bash
