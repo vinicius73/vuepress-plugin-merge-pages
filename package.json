@@ -4,7 +4,17 @@
   "description": "VuePress Plugin: Merge Markdown files in a single Markdown",
   "main": "src/index.js",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
+  "homepage": "https://github.com/vinicius73/vuepress-plugin-merge-pages",
+  "repository": {
+    "url": "https://github.com/vinicius73/vuepress-plugin-merge-pages"
+  },
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "markdown"
+  ],
   "scripts": {
     "lint": "eslint src/*.js",
     "test": "jest"
