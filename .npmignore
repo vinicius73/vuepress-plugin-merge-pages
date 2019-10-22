@@ -1,4 +1,6 @@
 src/__mocks__
 tests/
+jest.config
+.eslintrc
 .github
 .circleci
