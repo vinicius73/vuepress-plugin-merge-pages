@@ -17,12 +17,11 @@ test('generateFile', async () => {
     tempPath: '/x'
   }
 
-  const pages = []
-  const bundle = { name: 'jedi' }
+  const bundle = { name: 'jedi', pages: [] }
 
   await expect(
-    generateFile(context, pages, bundle)
+    generateFile(context, bundle)
   ).resolves.toBe(`/x/${PLUGIN_NAME}/jedi.md`)
 
-  expect(context.writeTemp).toHaveBeenCalledWith('vuepress-plugin-merge-md/jedi.md', '')
+  expect(context.writeTemp).toHaveBeenCalledWith(`${PLUGIN_NAME}/jedi.md`, '')
 })

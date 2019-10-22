@@ -33,7 +33,7 @@ const extractBundleData = (pages, bundle) => {
 
 const generatePageData = async (context, pages, bundleRaw) => {
   const bundle = extractBundleData(pages, bundleRaw)
-  const filePath = await generateFile(context, pages, bundle)
+  const filePath = await generateFile(context, bundle)
 
   return {
     path: bundle.path,

@@ -11,8 +11,8 @@ const mergePage = (current, { content }) => {
     : `${current}\n\n${content}\n\n<hr class="page-break" />`
 }
 
-const generateFile = async (context, pages, bundle) => {
-  const { name } = bundle
+const generateFile = async (context, bundle) => {
+  const { name, pages } = bundle
 
   logger.wait('Generating:', green(`${bundle.path} => ${name}.md`))
   logger.debug(bundle)
