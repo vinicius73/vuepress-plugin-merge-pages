@@ -6,8 +6,8 @@
 ![NPM](https://flat.badgen.net/npm/dm/vuepress-plugin-merge-pages?icon=npm)
 ![Codeclimate](https://flat.badgen.net/codeclimate/maintainability/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
 ![Codeclimate](https://flat.badgen.net/codeclimate/coverage/vinicius73/vuepress-plugin-merge-pages?icon=codeclimate)
-![Codeclimate](https://flat.badgen.net/lgtm/grade/g/vinicius73/vuepress-plugin-merge-pages?icon=lgtm)
-![Codeclimate](https://flat.badgen.net/github/status/vinicius73/vuepress-plugin-merge-pages?icon=github)
+![lgtm](https://flat.badgen.net/lgtm/grade/g/vinicius73/vuepress-plugin-merge-pages?icon=lgtm)
+![github](https://flat.badgen.net/github/status/vinicius73/vuepress-plugin-merge-pages?icon=github)
 
 
 ## Install
@@ -30,6 +30,14 @@ module.exports = {
           name: 'print-all-content-page', // optional
           filter: (pages) => { // optional
             return pages.filter(({ path }) => path.includes('/printable-page/'))
+          },
+          mergePages: pages => { // optional
+            const pageBreak = '<hr class="page-break" />\n\n'
+            const initialValue = `# My Printable Page\n\n[[TOC]]\n${pageBreak}`
+            return pages
+              .reduce((acc, current) => {
+                return `${acc}${current.content}\n\n${pageBreak}`
+              }, initialValue)
           }
         }]
       }
@@ -49,7 +57,7 @@ List of target merge files.
 #### bundles[].path
 
 - Type: `String`
-- Required: `true`
+- Required: `false`
 
 Page route path, url of target page.
 
@@ -62,10 +70,13 @@ Name of generated file.
 
 #### bundles[].filter
 
-- Type: `Function => Boolean`
+- Type: `Function => Page[]`
 - Required: `false`
 
 Filter pages of bundle. Receive `pages` and return new list of pages
+See above example for mor details
+
+##### Page object
 
 ```js
 // page object
@@ -74,3 +85,11 @@ Filter pages of bundle. Receive `pages` and return new list of pages
   path: String,
 }
 ```
+
+#### bundles[].mergePages
+
+- Type: `Function => String`
+- Required: `false`
+
+Custom content merge. Allow interaction with pages to inject custom contents.
+See above example for mor details

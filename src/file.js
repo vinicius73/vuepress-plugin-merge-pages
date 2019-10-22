@@ -8,7 +8,11 @@ const { green } = chalk
 const mergePage = (current, { content }) => {
   return current.length === 0
     ? content
-    : `${current}\n\n${content}\n\n<hr class="page-break" />`
+    : `${current}\n\n${content}`
+}
+
+const mergePages = pages => {
+  return pages.reduce(mergePage, '')
 }
 
 const generateFile = async (context, bundle) => {
@@ -17,7 +21,9 @@ const generateFile = async (context, bundle) => {
   logger.wait('Generating:', green(`${bundle.path} => ${name}.md`))
   logger.debug(bundle)
 
-  const content = pages.reduce(mergePage, '')
+  const content = bundle.mergePages
+    ? bundle.mergePages(pages, context)
+    : mergePages(pages)
 
   const filePath = `${PLUGIN_NAME}/${name}.md`
 
