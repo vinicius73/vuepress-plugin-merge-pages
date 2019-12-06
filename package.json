@@ -20,15 +20,15 @@
     "test": "jest"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
+    "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.19.0",
+    "eslint-plugin-jest": "^23.1.1",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
-    "jest-junit": "^8.0.0"
+    "jest-junit": "^10.0.0"
   },
   "dependencies": {
     "cross-path-sort": "^1.0.0",
