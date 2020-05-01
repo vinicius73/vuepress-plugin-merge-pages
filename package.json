@@ -17,7 +17,9 @@
   ],
   "scripts": {
     "lint": "eslint src/*.js",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
@@ -32,6 +34,8 @@
   },
   "dependencies": {
     "cross-path-sort": "^1.0.0",
-    "vuepress": "^1.2.0"
-  }
+    "vuepress": "^1.2.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
