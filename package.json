@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-merge-pages",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "VuePress Plugin: Merge Markdown files in a single Markdown",
   "main": "src/index.js",
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
