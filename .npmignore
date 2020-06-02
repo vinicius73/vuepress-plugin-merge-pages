@@ -1,6 +1,7 @@
-src/__mocks__
 tests/
-jest.config
-.eslintrc
-.github
-.circleci
+coverage/
+src/__mocks__
+.github/
+.circleci/
+jest.config.*
+.eslintrc.*
