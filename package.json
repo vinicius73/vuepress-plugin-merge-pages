@@ -20,19 +20,19 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.8.2"
   },
   "devDependencies": {
-    "eslint": "^7.1.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.13.2",
+    "eslint": "^8.1.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.2.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "jest": "^26.0.1",
-    "jest-junit": "^10.0.0",
-    "vuepress": "^1.5.0"
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.3.1",
+    "jest-junit": "^13.0.0",
+    "vuepress": "^1.8.2"
   },
   "dependencies": {
     "cross-path-sort": "^1.0.0"
